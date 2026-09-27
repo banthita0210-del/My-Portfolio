@@ -1493,7 +1493,7 @@ onBeforeUnmount(() => {
                     </span>
 
                     <a
-                        href="ใส่ลิงก์-GitHub-ของคุณตรงนี้"
+                        href="https://github.com/banthita0210-del?utm_source=chatgpt.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="contact-link github-link"
