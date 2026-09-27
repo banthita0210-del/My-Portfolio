@@ -1,0 +1,135 @@
+:root {
+  --bg:        #08080f;
+  --surface:   #111118;
+  --glass:     rgba(255,255,255,0.04);
+  --border:    rgba(201,168,76,0.18);
+  --gold:      #c9a84c;
+  --gold-dim:  #9e7e30;
+  --gold-glow: rgba(201,168,76,0.15);
+  --text:      #e8e2d0;
+  --text-dim:  #7a7468;
+  --red:       #e05252;
+  --green:     #52c97a;
+  --mono:      'IBM Plex Mono', monospace;
+  --serif:     'Playfair Display', Georgia, serif;
+  --sans:      'Noto Sans Thai', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Background layers */
+.noise, .grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Noise layer */
+.noise {
+  z-index: 0; /* ชั้นล่างสุด */
+  background-color: #08080f; /* พื้นหลังดำชัดเจน */
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035; /* ความโปร่งของ noise */
+}
+
+/* Grid overlay layer */
+.grid-bg {
+  z-index: 1; /* อยู่เหนือ noise */
+  background-image:
+    linear-gradient(rgba(201,168,76,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Page content */
+.page {
+  position: relative;
+  z-index: 2; /* อยู่บนสุด */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.app {
+  position: relative; z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch; /* ให้ความสูงเท่ากัน */
+}
+
+.left-section, .right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* SUBJECTS ต่อเต็มความกว้าง */
+.subjects-section {
+  grid-column: 1 / -1; /* span ทั้งสองคอลัมน์ */
+}
+
+.left-section, .right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* ให้สองคอลัมน์มีความสูงเท่ากัน */
+  justify-content: flex-start;
+}
+
+.gpa-banner {
+  background: linear-gradient(135deg, #1e3a5f, #1e4080);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; /* จัดจากบนลงล่าง */
+  align-items: center;
+  justify-content: center; /* ให้วงกลมอยู่กลาง */
+  height: 100%; /* เติมเต็มความสูง */
+  gap: 1rem;
+}
+
+.ring-wrap svg {
+  width: 110px;  /* ขยายวงกลม */
+  height: 110px;
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpa-info {
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+

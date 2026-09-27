@@ -1,0 +1,15 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "studentId": "6730200201",
+      "name": "Banthita",
+      "lastname": "Chalerm",
+      "nickname":"Baifern",
+      "age":"21",
+      "major": "Computer Science",
+      "school": "Kasetsart University Sriracha Campus",
+      "image": "ban.jpg"
+    }
+  ]
+}
