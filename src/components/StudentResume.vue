@@ -1493,8 +1493,7 @@ onBeforeUnmount(() => {
                     </span>
 
                     <a
-                        href="https://github.com/banthita0210-del?utm_source=chatgpt.com"
-                        target="_blank"
+                        href="https://github.com/banthita0210-de"
                         rel="noopener noreferrer"
                         class="contact-link github-link"
                     >
