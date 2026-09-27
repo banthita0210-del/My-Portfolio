@@ -1493,7 +1493,7 @@ onBeforeUnmount(() => {
                     </span>
 
                     <a
-                        href="https://github.com/banthita0210-del"
+                        href="https://github.com/banthita0210-del."
                         rel="noopener noreferrer"
                         class="contact-link github-link"
                     >
