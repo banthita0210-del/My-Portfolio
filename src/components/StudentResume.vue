@@ -1296,7 +1296,7 @@ onBeforeUnmount(() => {
 
             <div class="activity-image">
                 <img
-                    :src="`${baseUrl}images/lcce.jpg`"
+                    :src="`${baseUrl}images/lcce.jpeg`"
                     alt="LINK Certified Network Cabling for Engineering"
                 />
             </div>
